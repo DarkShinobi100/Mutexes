@@ -1,12 +1,19 @@
 // Race conditions example
 // Adam Sampson <a.sampson@abertay.ac.uk>
 
-//Timings
+//Timings (insecure)
 //20ms
 //21ms
 //20ms
 //18ms
 //43ms
+
+//Timings (secure)
+//137ms
+//142ms
+//136ms
+//148ms
+//141ms
 
 #include <iostream>
 #include <chrono>
@@ -23,6 +30,7 @@ using std::chrono::milliseconds;
 using std::chrono::steady_clock;
 using std::chrono::duration_cast;
 using std::mutex;
+using std::unique_lock;
 
 //define the alias for the clock type we're going to use
 typedef std::chrono::steady_clock the_clock;
@@ -34,9 +42,10 @@ void add()
 {
 	for (int i = 0; i < 1000000; i++)
 	{
-		bill_mutex.lock();
+		//bill_mutex.lock();
+		unique_lock <mutex> lock(bill_mutex);
 		bill.add(17, 29);
-		bill_mutex.unlock();
+		//bill_mutex.unlock();
 	}
 }
 
