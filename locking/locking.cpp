@@ -29,21 +29,21 @@ using std::thread;
 using std::chrono::milliseconds;
 using std::chrono::steady_clock;
 using std::chrono::duration_cast;
-using std::mutex;
-using std::unique_lock;
+//using std::mutex;
+//using std::unique_lock;
 
 //define the alias for the clock type we're going to use
 typedef std::chrono::steady_clock the_clock;
 
-Account bill;
-mutex bill_mutex;
+ Account bill;
+//mutex bill_mutex;
 
 void add()
 {
 	for (int i = 0; i < 1000000; i++)
 	{
 		//bill_mutex.lock();
-		unique_lock <mutex> lock(bill_mutex);
+		//unique_lock <mutex> lock(bill_mutex);
 		bill.add(17, 29);
 		//bill_mutex.unlock();
 	}

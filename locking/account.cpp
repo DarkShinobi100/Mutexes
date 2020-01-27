@@ -7,6 +7,7 @@ using std::string;
 
 void Account::add(unsigned int tpounds, unsigned int tpence)
 {
+	unique_lock <mutex> lock(bill_mutex);
 	pounds_ += tpounds;
 	pence_ += tpence;
 

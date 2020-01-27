@@ -1,12 +1,13 @@
-﻿  locking.cpp
+﻿  account.cpp
+  locking.cpp
 \\StuHomeEven\HomeDrive8$\1901418\GitHub\Mutexes\locking\locking.cpp(78,61): warning C4244:  '=': conversion from '_Rep' to 'float', possible loss of data
 \\StuHomeEven\HomeDrive8$\1901418\GitHub\Mutexes\locking\locking.cpp(78,61): warning C4244:         with
 \\StuHomeEven\HomeDrive8$\1901418\GitHub\Mutexes\locking\locking.cpp(78,61): warning C4244:         [
 \\StuHomeEven\HomeDrive8$\1901418\GitHub\Mutexes\locking\locking.cpp(78,61): warning C4244:             _Rep=__int64
 \\StuHomeEven\HomeDrive8$\1901418\GitHub\Mutexes\locking\locking.cpp(78,61): warning C4244:         ]
   Generating code
-  12 of 129 functions ( 9.3%) were compiled, the rest were copied from previous compilation.
-    9 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  20 of 129 functions (15.5%) were compiled, the rest were copied from previous compilation.
+    13 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   locking.vcxproj -> \\StuHomeEven\HomeDrive8$\1901418\GitHub\Mutexes\x64\Release\locking.exe
