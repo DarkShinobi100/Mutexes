@@ -13,6 +13,7 @@
 #include <string>
 #include <thread>
 #include "account.h"
+#include <mutex>
 
 // Import things we need from the standard library
 using std::cout;
@@ -21,16 +22,21 @@ using std::thread;
 using std::chrono::milliseconds;
 using std::chrono::steady_clock;
 using std::chrono::duration_cast;
+using std::mutex;
 
 //define the alias for the clock type we're going to use
 typedef std::chrono::steady_clock the_clock;
 
 Account bill;
+mutex bill_mutex;
+
 void add()
 {
 	for (int i = 0; i < 1000000; i++)
 	{
+		bill_mutex.lock();
 		bill.add(17, 29);
+		bill_mutex.unlock();
 	}
 }
 
