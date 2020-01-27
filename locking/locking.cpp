@@ -1,7 +1,15 @@
 // Race conditions example
 // Adam Sampson <a.sampson@abertay.ac.uk>
 
+//Timings
+//20ms
+//21ms
+//20ms
+//18ms
+//43ms
+
 #include <iostream>
+#include <chrono>
 #include <string>
 #include <thread>
 #include "account.h"
@@ -10,6 +18,12 @@
 using std::cout;
 using std::endl;
 using std::thread;
+using std::chrono::milliseconds;
+using std::chrono::steady_clock;
+using std::chrono::duration_cast;
+
+//define the alias for the clock type we're going to use
+typedef std::chrono::steady_clock the_clock;
 
 Account bill;
 void add()
@@ -23,9 +37,13 @@ void add()
 
 int main(int argc, char *argv[])
 {
+	float time_taken;
 	thread myThread[5];
 
 	cout << "Initial: " << bill.total() << "\n";
+	
+	//time how long it takes
+	the_clock::time_point start = the_clock::now();
 	
 	for (int i = 0; i < 5; i++)
 	{
@@ -41,6 +59,11 @@ int main(int argc, char *argv[])
 		myThread[i].join();
 	}
 
+	the_clock::time_point end = the_clock::now();
+	time_taken = duration_cast<milliseconds>(end - start).count();
+
+	//print the time taken
+	cout << "time taken to Search " << time_taken << "ms" << endl;
 	cout << "Total: " << bill.total() << "\n";
 
 	return 0;
