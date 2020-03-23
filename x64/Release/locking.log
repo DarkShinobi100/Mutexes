@@ -1,0 +1,3 @@
+﻿  Generating code
+LINK : fatal error C1354: error accessing previous object file C:\Users\User\Documents\C++\Mutexes\x64\Release\locking.iobj (corrupted symbol table)
+LINK : fatal error LNK1257: code generation failed

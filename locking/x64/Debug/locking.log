@@ -1,0 +1,5 @@
+﻿  account.cpp
+  locking.cpp
+C:\Users\User\Documents\C++\Mutexes\locking\locking.cpp(73,8): warning C4101: 'time_taken': unreferenced local variable
+  Generating Code...
+  locking.vcxproj -> C:\Users\User\Documents\C++\Mutexes\x64\Debug\locking.exe
