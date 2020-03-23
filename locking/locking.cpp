@@ -99,6 +99,7 @@ int main(int argc, char *argv[])
 
 	//print the time taken
 	//cout << "time taken to Search " << time_taken << "ms" << endl;
+
 	cout << "Total: " << bill.total() << "\n";
 
 	return 0;
