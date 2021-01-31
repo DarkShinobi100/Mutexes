@@ -71,7 +71,7 @@ void print_total()
 int main(int argc, char *argv[])
 {
 	float time_taken;
-	thread myThread[5];
+	thread myThread[20];
 	thread printThread;
 
 	cout << "Initial: " << bill.total() << "\n";
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 	//time how long it takes
 	//the_clock::time_point start = the_clock::now();
 	
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		myThread[i] = thread(add);
 	}
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 	//bill.add(10, 99);
 	// Wait for myThread to finish.
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		myThread[i].join();
 	}
